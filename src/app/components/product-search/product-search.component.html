@@ -1,0 +1,10 @@
+<input type="text" placeholder="Search" #searchTerm (input)="searchProductText(searchTerm.value)">
+<ul *ngIf="showResults">
+    <li *ngFor="let p of products | async">
+        <a (click)="hideResults()" routerLink="/details/{{p?.id}}">
+            <h3>{{p?.name}}</h3>
+            <img [src]="p?.imageUrl">
+        </a>
+    </li>
+</ul>
+

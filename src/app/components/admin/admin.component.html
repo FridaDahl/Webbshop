@@ -1,0 +1,13 @@
+<ul>
+    <li *ngFor="let o of orders">
+        <h3>Created by: {{ o.createdBy }}</h3>
+        <p>Order ID: {{o.id}}</p>
+        <div *ngFor="let or of fillProductInfo(o.orderRows)">
+            <p>{{or.product?.name}} {{or.product?.price}}:-</p>
+        </div>
+        <p>Total amount: {{o.totalPrice}} :-</p>
+        <p>Payment method: {{ o.paymentMethod }}</p>
+        <button (click)="removeOrder(o.id)">DELETE</button>
+    </li>
+    
+</ul>

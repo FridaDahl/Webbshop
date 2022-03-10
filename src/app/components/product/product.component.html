@@ -1,0 +1,12 @@
+<li *ngIf="showProduct">
+  <a routerLink="/details/{{product.id}}">
+    <img [src]="product.imageUrl"/>
+    <div>
+      <h3>{{ product.name }}</h3>
+      <h4>{{ product.price }}:- </h4>
+    </div>
+  </a>
+  <button (click)="addToCart();" >BUY</button>   
+</li>
+
+

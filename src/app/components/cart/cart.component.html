@@ -1,0 +1,43 @@
+<div class="emptyCart" *ngIf="emptyCartMessage">
+    <h3>Your shoppingcart is currently empty</h3>
+    <a routerLink="">Click here to browse products</a>
+</div>
+
+<ul>
+    <li *ngFor="let p of products; let i = index">
+        <img [src]="p.imageUrl"/>
+        <h3>{{ p.name }}</h3>
+        <h4>{{ p.price }}:- </h4>
+        <button (click)="remove(i)">remove</button>
+    </li>
+    <li *ngIf="showTotal">
+        <h3>Total amount:</h3>
+        <h4>{{ totalPriceValue }}:-</h4>
+    </li>
+</ul>
+<div *ngIf="disabledCheckOutButton" (click)="checkOutToggle()">
+    <button *ngIf="showTotal" >Check out</button>
+</div>
+
+<form *ngIf="showForm" [formGroup]="checkOutForm" (ngSubmit)="handleSubmit()">
+    <!-- <label for="firstname">Firstname</label>
+    <input type="text" id="firstname" formControlName="firstName" placeholder="Firstname"/>
+    <label for="Lastname">Lastname</label>
+    <input type="text" id="lastname" formControlName="lastName" placeholder="Lastname" /> -->
+    <label for="email">Email</label>
+    <input type="email" id="email" formControlName="emailAdress" placeholder="Email" />
+    <label for="payment">Payment Method</label>
+    <select formControlName="payment" required>
+        <option [ngValue]="null" disabled selected hidden>Choose payment method</option>
+        <option *ngFor="let p of paymentMethods">
+            {{ p }}
+        </option>
+    </select>
+    <button [disabled]="!checkOutForm.valid" class="formButton" type="submit">Spara</button>
+</form>
+
+
+<div class="completed" *ngIf="showCheckOutCompleted">
+    <h3>Thanks for your order</h3>
+    <a routerLink="">Click here to browse more products</a>
+</div>

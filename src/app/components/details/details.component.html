@@ -1,0 +1,10 @@
+<div class="wrap">
+    <img [src]="product.imageUrl"/>
+        <div>
+            <h3>{{ product.name }}</h3>
+            <p>{{ product.description }}</p>
+        </div>
+        <h4>{{ product.price }}:- </h4>
+        <button (click)="addToCart();" >BUY</button>   
+</div>
+        
