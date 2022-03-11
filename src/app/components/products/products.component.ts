@@ -19,7 +19,6 @@ export class ProductsComponent implements OnInit {
     this.service.products$.subscribe((products) => {
       this.products = products;
       this.filtredProducts = this.products;
-      // console.log(this.products); 
     });
     this.service.getProduct();
 
@@ -36,5 +35,9 @@ export class ProductsComponent implements OnInit {
       return
     }
     this.filtredProducts = this.products.filter(prod => prod.productCategory.findIndex(i => i.categoryId === categoryId)>=0)
+  }
+
+  toggleFilterMenu(){
+     
   }
 }

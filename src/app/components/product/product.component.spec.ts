@@ -31,11 +31,10 @@ describe('ProductComponent', () => {
     expect(compiled.querySelector('h4')?.innerHTML).toBe('199');
   }
 
-  it('should')
 });
 @Component({
   template: `<app-product [product]="dataToSendToUser"></app-product>`
 })
 class TestHostComponent {
-  dataToSendToUser: Product = {id:999, name: 'The Dark Knight', description:'...', imageUrl: '...', price: 199 }
+  dataToSendToUser: Product = {id:999, name: 'The Dark Knight', description:'...', imageUrl: '...', price: 199, productCategory: [] }
 }

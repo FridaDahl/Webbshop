@@ -6,10 +6,10 @@ export class MockProductService implements IProductService {
     private products = new Subject<Product[]>();
     public products$: Observable<Product[]> = this.products.asObservable();
 
-    private testData: Product[] = [
-        new Product(999, 'Testprodukt', '...', '...', 0),
-        new Product(998, 'Testprodukt2', '...', '...', 0),
-        new Product(999, 'Testprodukt3', '...', '...', 0)
+    public testData: Product[] = [
+        new Product(999, 'Testprodukt', '...', '...', 0, []),
+        new Product(998, 'Testprodukt2', '...', '...', 0, []),
+        new Product(999, 'Testprodukt3', '...', '...', 0, [])
     ]
 
     getProduct(): void {

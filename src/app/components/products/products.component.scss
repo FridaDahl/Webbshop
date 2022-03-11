@@ -3,9 +3,27 @@ ul {
     flex-wrap: wrap;
 }
 
-.cat {
+.category {
     display: block;
+    background-color: #77ACB1;
+    padding: 10px;
     li{
         list-style: none;
+        display: inline;
+        padding: 20px;
+        
+        &:hover {
+            text-decoration: underline;
+            cursor: pointer;
+        }
+    }
+
+    a{
+        text-decoration: none;
+        color: black;
+    }
+    a:focus {
+        text-decoration: underline;
     }
 }
+

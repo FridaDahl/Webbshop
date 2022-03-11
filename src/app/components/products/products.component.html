@@ -1,6 +1,7 @@
-<ul class="cat">
-    <li (click)="filterByCategory(-1)">All</li>
-    <li *ngFor="let category of categories" (click)="filterByCategory(category.id)">{{category.name}}</li>
+<app-product-search></app-product-search>
+<ul class="category">
+    <li (click)="filterByCategory(-1)">All products</li>
+    <li *ngFor="let category of categories" (click)="filterByCategory(category.id)"><a href="#">{{category.name}}</a></li>
 </ul>
 <ul>
     <app-product *ngFor="let p of filtredProducts" [product]="p"></app-product>

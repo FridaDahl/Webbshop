@@ -5,6 +5,7 @@ import { CartService } from 'src/app/services/cart.service';
 import { ProductService } from 'src/app/services/product.service';
 
 
+
 @Component({
   selector: 'app-details',
   templateUrl: './details.component.html',
@@ -34,16 +35,12 @@ export class DetailsComponent implements OnInit {
 
     })
     this.service.getProduct();
-    // this.test = this.products.find(  id => this.product.id === this.productId); 
-    
-   
     
   }
 
   addToCart() {
     let newProductId: Product = new Product(this.product.id, this.product.name, this.product.description, this.product.imageUrl, this.product.price,[])
-    this.productService.addProduct(newProductId);
-    console.log(newProductId);  
+    this.productService.addProduct(newProductId); 
   }
 
 }

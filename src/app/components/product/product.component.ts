@@ -29,7 +29,6 @@ export class ProductComponent implements OnInit {
 
   addToCart() {
     let newProduct: Product = new Product(this.product.id, this.product.name, this.product.description, this.product.imageUrl, this.product.price, [])
-    this.service.addProduct(newProduct);  
+    this.service.addProduct(newProduct);
   }
-
 }

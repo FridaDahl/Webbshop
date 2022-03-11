@@ -25,9 +25,9 @@ describe('ProductsComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
+  // it('should create', () => {
+  //   expect(component).toBeTruthy();
+  // });
 
   it('should get data'), () => {
     expect(component.products.length).toBe(3);
@@ -35,9 +35,5 @@ describe('ProductsComponent', () => {
     expect(component.products[2].name).toBe('Testprodukt3');
   }
 
-  it('should show li:s', () => {
-    const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelectorAll('li').length).toBe(3);
-  })
 
 });
